@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZH | کۆنتڕۆڵی دوکان</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>ZH</h1>
+      <p>کۆنتڕۆڵی دوکانی نیرگەلە و ڤەیپ</p>
+    </div>
+    <button id="clearData" class="danger">سڕینەوەی هەموو داتا</button>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <div class="card"><span>فرۆشتنی ZH 1</span><strong id="sales1">0</strong></div>
+      <div class="card"><span>فرۆشتنی ZH 2</span><strong id="sales2">0</strong></div>
+      <div class="card"><span>کۆی کڕین</span><strong id="purchases">0</strong></div>
+      <div class="card"><span>کۆی مەسروفات</span><strong id="expenses">0</strong></div>
+      <div class="card highlight"><span>قازانجی کۆتایی</span><strong id="profit">0</strong></div>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="zh1">ZH 1</button>
+      <button class="tab" data-tab="zh2">ZH 2</button>
+      <button class="tab" data-tab="expensesTab">مەسروفات</button>
+      <button class="tab" data-tab="summary">کورتە</button>
+    </nav>
+
+    <section id="zh1" class="panel active">
+      <h2>ZH 1 — کڕین و فرۆشتن</h2>
+      <form class="entryForm" data-shop="zh1">
+        <input name="item" placeholder="ناوی شت" required>
+        <input name="type" placeholder="جۆری شت">
+        <input name="qty" type="number" min="1" placeholder="دانە" required>
+        <input name="buy" type="number" min="0" placeholder="نرخی کڕین" required>
+        <input name="sell" type="number" min="0" placeholder="نرخی فرۆشتن" required>
+        <input name="discount" type="number" min="0" max="100" step="0.01" value="0" placeholder="داشکان %">
+        <button type="submit">زیادکردن</button>
+      </form>
+      <div class="tableWrap"><table><thead><tr><th>شت</th><th>دانە</th><th>کڕین</th><th>فرۆشتن</th><th>داشکان</th><th>قازانج</th><th></th></tr></thead><tbody id="zh1Rows"></tbody></table></div>
+    </section>
+
+    <section id="zh2" class="panel">
+      <h2>ZH 2 — کڕین و فرۆشتن</h2>
+      <form class="entryForm" data-shop="zh2">
+        <input name="item" placeholder="ناوی شت" required>
+        <input name="type" placeholder="جۆری شت">
+        <input name="qty" type="number" min="1" placeholder="دانە" required>
+        <input name="buy" type="number" min="0" placeholder="نرخی کڕین" required>
+        <input name="sell" type="number" min="0" placeholder="نرخی فرۆشتن" required>
+        <input name="discount" type="number" min="0" max="100" step="0.01" value="0" placeholder="داشکان %">
+        <button type="submit">زیادکردن</button>
+      </form>
+      <div class="tableWrap"><table><thead><tr><th>شت</th><th>دانە</th><th>کڕین</th><th>فرۆشتن</th><th>داشکان</th><th>قازانج</th><th></th></tr></thead><tbody id="zh2Rows"></tbody></table></div>
+    </section>
+
+    <section id="expensesTab" class="panel">
+      <h2>مەسروفات</h2>
+      <form id="expenseForm" class="entryForm">
+        <input name="type" placeholder="جۆری مەسروف" required>
+        <input name="note" placeholder="تێبینی">
+        <input name="amount" type="number" min="0" placeholder="بڕی پارە" required>
+        <button type="submit">زیادکردن</button>
+      </form>
+      <div class="tableWrap"><table><thead><tr><th>جۆر</th><th>تێبینی</th><th>بڕ</th><th></th></tr></thead><tbody id="expenseRows"></tbody></table></div>
+    </section>
+
+    <section id="summary" class="panel">
+      <h2>کورتەی حساب</h2>
+      <div id="summaryBox" class="summaryBox"></div>
+    </section>
+  </main>
+
+  <footer>ZH — داتاکان تەنها لەسەر ئەم ئامێرە هەڵدەگیرێن.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
